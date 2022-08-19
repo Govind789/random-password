@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selfwork-6</title>
+</head>
+<body>
+    <h2>Random Password Generator</h2>
+    <div>Type the length of the Password:<input type="number" id="mainNumber"></div>
+    <div><input type="text" id="main" maxlength="8"></div>
+    <button onclick="mixAll(10)">GENERATE</button>
+</body>
+<script>
+    function mixAll(x){
+        let data = document.getElementById("main");
+        let len = document.getElementById("mainNumber");
+        let allText = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        let numb = allText.split('').sort(function(){return 0.5-Math.random()});
+        numb.length = len.value;
+        let mainType = numb.join('');
+        // let Password = "";
+        // a = [];
+        // for(let i = 0; i<x; i++){
+        //     a.push(mainType[i])
+        // }
+        // data.value = a.join('')
+        data.value = mainType;
+    }
+</script>
+</html>
